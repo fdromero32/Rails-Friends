@@ -2,7 +2,6 @@
   <% if friend.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(friend.errors.count, "error") %> prohibited this friend from being saved:</h2>
-
       <ul>
         <% friend.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -10,38 +9,26 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
+  
+  <div class="field mb-3">
+    <%= form.text_field :first_name, class: "form-control", placeholder: "First Name" %>
   </div>
-
-  <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
+  <div class="field mb-3">
+    <%= form.text_field :last_name, class: "form-control", placeholder: "Last Name" %>
   </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+  <div class="field mb-3">
+    <%= form.text_field :email, class: "form-control", placeholder: "Email" %>
   </div>
-
-  <div class="field">
-    <%= form.label :phone_number %>
-    <%= form.text_field :phone_number %>
+  <div class="field mb-3">
+    <%= form.text_field :phone_number, class: "form-control", placeholder: "Phone Number" %>
   </div>
-
-  <div class="field">
-    <%= form.label :twitter %>
-    <%= form.text_field :twitter %>
+  <div class="field mb-3">
+    <%= form.text_field :twitter, class: "form-control", placeholder: "Twitter" %>
   </div>
-
-  <div class="field">
-    <%= form.label :linkedin %>
-    <%= form.text_field :linkedin %>
+  <div class="field mb-3">
+    <%= form.text_field :linkedin, class: "form-control", placeholder: "LinkedIn" %>
   </div>
-
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-info' %>
   </div>
 <% end %>
