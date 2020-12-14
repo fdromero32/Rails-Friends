@@ -14,20 +14,22 @@
   </thead>
   <tbody>
     <% @friends.each do |friend| %>
-      <tr>
-        <td><%= friend.user.id%>
-        <td><%= friend.first_name %></td>
-        <td><%= friend.last_name %></td>
-        <td><%= friend.email %></td>
-        <td><%= friend.phone_number %></td>
-        <td><%= friend.twitter %></td>
-        <td><%= friend.linkedin %></td>
-        <td><%= link_to 'Show', friend, class: "btn-info btn-sm" %></td>
-        <td><%= link_to 'Edit', edit_friend_path(friend), class: "btn-info btn-sm" %></td>
-        <td><%= link_to 'Delete', friend, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-info btn-sm" %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
-<%= link_to 'New Friend', new_friend_path, class: 'btn btn-info' %>
+      <% if friend.user == current_user %>
+        <tr>
+          <td><%= friend.user.id%>
+            <td><%= friend.first_name %></td>
+            <td><%= friend.last_name %></td>
+            <td><%= friend.email %></td>
+            <td><%= friend.phone_number %></td>
+            <td><%= friend.twitter %></td>
+            <td><%= friend.linkedin %></td>
+            <td><%= link_to 'Show', friend, class: "btn-info btn-sm" %></td>
+            <td><%= link_to 'Edit', edit_friend_path(friend), class: "btn-info btn-sm" %></td>
+            <td><%= link_to 'Delete', friend, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-info btn-sm" %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+  <%= link_to 'New Friend', new_friend_path, class: 'btn btn-info' %>
