@@ -69,8 +69,6 @@ class FriendsController < ApplicationController
     redirect_to friends_path, notice: "Not Authorized To Edit This Friend" if @friend.nil?
   end
 
-
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_friend
@@ -79,6 +77,6 @@ class FriendsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def friend_params
-      params.require(:friend).permit(:first_name, :last_name, :email, :phone, :twitter, :user_id)
+      params.require(:friend).permit(:first_name, :last_name, :email, :phone_number, :twitter, :linkedin, :user_id)
     end
 end
