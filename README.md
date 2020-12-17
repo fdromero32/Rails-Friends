@@ -1,4 +1,4 @@
-# Project -- Rails Friends App
+# Rails Friends App
 
 [https://railsfriends-drome.herokuapp.com](https://railsfriends-drome.herokuapp.com)
 
@@ -48,7 +48,7 @@ heroku git:remote -a railsfriends
 heroku git:remote --remote heroku-staging -a railsfriends-staging
 ```
 
-## Serve
+## Server
 
 ```zsh
 rails s
